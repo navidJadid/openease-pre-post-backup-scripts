@@ -1,13 +1,10 @@
 #!/bin/bash
 
-# array to hold all the paths to relevant compose-files
-# that should be started with this script
-docker_compose_paths=( \
-    # add your paths here
-    # lines need to be separated by backslash
-    # example:
-    #   /usr/Documents \
-)
+# If you call this script from within another script
+# it might be necessary to use an absolute path.
+# Otherwise there might be problems resolving the
+# path to config.sh
+source ./config.sh
 
 start-compose-script () {
     cd $1
